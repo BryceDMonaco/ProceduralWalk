@@ -15,6 +15,8 @@ public class ProceduralWalk : MonoBehaviour
     private bool footDown = false;
     private Vector3 footDownPos;
 
+    public LineRenderer lineRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,5 +75,8 @@ public class ProceduralWalk : MonoBehaviour
 
         // Used in place of a model for the leg model
         Debug.DrawLine(legTransform.position, footTransform.position, Color.green);
+
+        lineRenderer.SetPosition(0, legTransform.position);
+        lineRenderer.SetPosition(1, footTransform.position);
     }
 }
